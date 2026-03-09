@@ -1533,10 +1533,11 @@ function buildReview() {
     .map(([k,v]) => `<strong>${k}:</strong> ${v}`).join('<br/>');
 }
 
-/* ── GHL WEBHOOK SUBMIT ──────────────── */
-/* Replace YOUR_GHL_WEBHOOK_URL with your actual webhook URL:
-   GHL > Automation > New Workflow > Webhook Trigger > Copy URL */
-const GHL_WEBHOOK = 'YOUR_GHL_WEBHOOK_URL';
+/* ── GHL BACKEND SUBMIT ──────────────── */
+/* Set GHL_WEBHOOK to your deployed backend URL (e.g. https://your-app.railway.app/api/leads)
+   Set WEBHOOK_SECRET to the same value as WEBHOOK_SECRET in your server/.env */
+const GHL_WEBHOOK = 'YOUR_BACKEND_URL/api/leads';
+const WEBHOOK_SECRET = 'pvprl-wh-2024';
 
 async function submitForm() {
   const btn = document.getElementById('btnNext');
@@ -1556,9 +1557,15 @@ async function submitForm() {
     tags:        ['website-lead','free-estimate'],
   };
   try {
-    if(GHL_WEBHOOK !== 'YOUR_GHL_WEBHOOK_URL') {
-      await fetch(GHL_WEBHOOK, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), mode:'no-cors'});
-    }
+    const res = await fetch(GHL_WEBHOOK, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Webhook-Secret': WEBHOOK_SECRET,
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('Server error');
     // Hide form, show success
     document.getElementById('formProgress').style.display = 'none';
     document.querySelectorAll('.form-panel').forEach(p => p.style.display='none');
