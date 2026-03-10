@@ -5,12 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#0d1f3c"/>
 <title>Perfect View PRL – Expert Roofing, Painting & Construction</title>
+<meta name="description" content="Perfect View PRL provides expert commercial and residential roofing, painting, and construction services across NC, SC, VA, MD, DC, MI & OH. Licensed, insured, MBE/WBE certified. Get a free estimate today."/>
+<meta name="keywords" content="roofing, painting, construction, TPO roofing, commercial roofing, residential painting, general contractor, storm restoration, MBE, WBE, North Carolina, South Carolina, Virginia, Maryland"/>
+<link rel="canonical" href="https://perfectviewprl.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Perfect View PRL – Expert Roofing, Painting & Construction"/>
+<meta property="og:description" content="Full-service contracting: roofing, painting, construction & restoration across 7 states. Licensed, insured, MBE/WBE certified. Free estimates."/>
+<meta property="og:url" content="https://perfectviewprl.com/"/>
+<meta property="og:site_name" content="Perfect View PRL"/>
+<meta property="og:image" content="https://perfectviewprl.com/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Perfect View PRL – Expert Roofing, Painting & Construction"/>
+<meta name="twitter:description" content="Full-service contracting: roofing, painting, construction & restoration across 7 states. Free estimates."/>
+<meta name="twitter:image" content="https://perfectviewprl.com/og-image.jpg"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='16' width='100' height='100' fill='%230d1f3c'/><text x='50' y='68' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='44' fill='%23e85d04'>PV</text></svg>"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='16' width='100' height='100' fill='%230d1f3c'/><text x='50' y='68' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='44' fill='%23e85d04'>PV</text></svg>"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://images.unsplash.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 
 <!-- GHL Chat Widget: paste your snippet here -->
-<!-- <script src="https://widgets.leadconnectorhq.com/loader.js" data-widget-id="YOUR_ID"></script> -->
+<!-- <script src="https://widgets.leadconnectorhq.com/loader.js" data-widget-id="YOUR_ID"></script>-->
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Perfect View PRL",
+  "description": "Full-service contracting providing commercial and residential roofing, painting, construction and restoration services across the East Coast and Midwest.",
+  "url": "https://perfectviewprl.com",
+  "telephone": "+17472532920",
+  "areaServed": [
+    {"@type": "State", "name": "North Carolina"},
+    {"@type": "State", "name": "South Carolina"},
+    {"@type": "State", "name": "Virginia"},
+    {"@type": "State", "name": "Maryland"},
+    {"@type": "AdministrativeArea", "name": "Washington, DC"},
+    {"@type": "State", "name": "Michigan"},
+    {"@type": "State", "name": "Ohio"}
+  ],
+  "serviceType": ["Roofing", "Painting", "Construction", "Storm Restoration", "Landscaping", "Drywall"],
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "HUB Certified"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "MBE/WBE Certified"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "127"
+  },
+  "priceRange": "$$"
+}
+</script>
 
 <style>
 /* ═══════════════════════════════════════
@@ -44,6 +101,13 @@ button{font-family:inherit}
 a,button{min-height:44px;display:inline-flex;align-items:center}
 /* override for inline spans/divs that aren't tappable */
 div a,li a{min-height:unset;display:inline}
+
+/* Skip link */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--orange);color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;z-index:10000;font-weight:600;font-size:14px;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Focus ring for keyboard users */
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
 
 /* ═══════════════════════════════════════
    NAV
@@ -329,15 +393,16 @@ section{padding:64px 20px}
 .svc-card{
   border:1px solid var(--border);border-radius:var(--r);
   padding:24px 22px;cursor:pointer;position:relative;overflow:hidden;
-  background:#fff;transition:box-shadow .25s,border-color .25s;
+  background:#fff;transition:box-shadow .25s,border-color .25s,transform .25s;
 }
 .svc-card::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
   background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s;
 }
-.svc-card:hover,.svc-card:focus-within{box-shadow:var(--sh-md);border-color:rgba(232,93,4,.3)}
+.svc-card:hover,.svc-card:focus-within{box-shadow:var(--sh-md);border-color:rgba(232,93,4,.3);transform:translateY(-4px)}
+.svc-card:hover .svc-icon{transform:scale(1.1);background:rgba(232,93,4,.18)}
 .svc-card:hover::after{transform:scaleX(1)}
-.svc-icon{width:44px;height:44px;border-radius:10px;background:rgba(232,93,4,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;min-height:unset}
+.svc-icon{width:44px;height:44px;border-radius:10px;background:rgba(232,93,4,.1);display:flex;align-items:center;justify-content:center;color:var(--orange);margin-bottom:14px;min-height:unset;transition:transform .2s,background .2s}
 .svc-name{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
 .svc-desc{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:14px}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -357,8 +422,10 @@ section{padding:64px 20px}
 .why-icon{
   width:48px;height:48px;border-radius:12px;flex-shrink:0;
   background:rgba(232,93,4,.15);border:1px solid rgba(232,93,4,.25);
-  display:flex;align-items:center;justify-content:center;font-size:20px;min-height:unset;
+  display:flex;align-items:center;justify-content:center;color:var(--orange);min-height:unset;
+  transition:transform .2s,background .2s;
 }
+.why-item:hover .why-icon{transform:scale(1.08);background:rgba(232,93,4,.22)}
 .why-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:7px}
 .why-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.72}
 
@@ -528,6 +595,11 @@ a.ci-value:hover{color:var(--orange)}
 .fg input:focus,.fg select:focus,.fg textarea:focus{
   border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,93,4,.1);
 }
+.fg.has-error input,.fg.has-error select,.fg.has-error textarea{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.08)}
+.fg .field-error{font-size:12px;color:#dc2626;margin-top:2px;display:none;align-items:center;gap:4px;min-height:unset}
+.fg.has-error .field-error{display:flex}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.fg.shake{animation:shake .4s ease}
 .fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%236b7280' d='M5 7L0 2h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .fg textarea{height:110px;resize:vertical}
 .form-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-top:1px solid var(--border);background:var(--gray-lt)}
@@ -537,8 +609,8 @@ a.ci-value:hover{color:var(--orange)}
 .btn-next:hover{background:var(--orange2);transform:translateY(-1px)}
 .review-box{background:var(--gray-lt);border-radius:10px;padding:18px;font-size:14px;line-height:1.8;margin-bottom:14px;color:var(--text)}
 .form-success{display:none;padding:48px 24px;text-align:center}
-.form-success.show{display:block}
-.s-icon{font-size:48px;margin-bottom:14px}
+.form-success.show{display:block;animation:panelIn .4s ease}
+.s-icon{margin-bottom:14px}
 .s-title{font-family:'DM Serif Display',serif;font-size:26px;color:var(--navy);margin-bottom:10px}
 .s-desc{font-size:15px;color:var(--gray);line-height:1.7}
 .cal-toggle{margin-top:16px;text-align:center}
@@ -567,6 +639,9 @@ footer{
 .f-logo em{color:var(--orange);font-style:normal}
 .f-desc{font-size:13px;line-height:1.78;max-width:260px}
 .f-hours{font-size:12px;margin-top:12px;color:rgba(255,255,255,.4)}
+.f-social{display:flex;gap:12px;margin-top:16px}
+.f-social a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);transition:background .2s,color .2s,transform .2s}
+.f-social a:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
 .footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px}
 .f-col-title{font-size:12px;font-weight:800;color:#fff;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase;min-height:unset;display:block}
 .f-links{list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -773,8 +848,11 @@ footer{
 </head>
 <body>
 
+<!-- Skip to content -->
+<a href="#hero" class="skip-link">Skip to main content</a>
+
 <!-- ── NAV ──────────────────────────── -->
-<nav id="nav">
+<nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="#hero" class="nav-logo">Perfect View <em>PRL</em></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -831,11 +909,11 @@ footer{
 <!-- ── TRUST BAR ─────────────────────── -->
 <div id="trust" role="region" aria-label="Certifications">
   <div class="trust-inner">
-    <div class="trust-item"><div class="trust-icon">&#10003;</div>Licensed &amp; Insured</div>
-    <div class="trust-item"><div class="trust-icon">&#127942;</div>HUB Certified</div>
-    <div class="trust-item"><div class="trust-icon">&#128101;</div>MBE / WBE</div>
-    <div class="trust-item"><div class="trust-icon">&#128221;</div>D&amp;B Registered</div>
-    <div class="trust-item"><div class="trust-icon">&#9200;</div>24hr Response</div>
+    <div class="trust-item"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>Licensed &amp; Insured</div>
+    <div class="trust-item"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>HUB Certified</div>
+    <div class="trust-item"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>MBE / WBE</div>
+    <div class="trust-item"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>D&amp;B Registered</div>
+    <div class="trust-item"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>24hr Response</div>
   </div>
 </div>
 
@@ -890,56 +968,56 @@ footer{
     </div>
     <div class="services-grid" id="servicesGrid">
       <div class="svc-card reveal" data-cat="roofing">
-        <div class="svc-icon">&#127968;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="1"/><polyline points="2 10 12 4 22 10"/><line x1="12" y1="14" x2="12" y2="21"/></svg></div>
         <div class="svc-name">Commercial Flat Top Roofing (TPO)</div>
         <div class="svc-desc">Thermoplastic polyolefin membrane — premier choice for commercial flat roofs. Energy-efficient and weather-resistant.</div>
         <div class="svc-tags"><span class="svc-tag">Commercial</span><span class="svc-tag">Energy Efficient</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d1" data-cat="roofing">
-        <div class="svc-icon">&#9968;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M5 11h14"/><path d="M5 15h14"/></svg></div>
         <div class="svc-name">Shingle Roofing</div>
         <div class="svc-desc">Professional installation and repair for residential and commercial. Architectural and designer shingles available.</div>
         <div class="svc-tags"><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d2" data-cat="painting">
-        <div class="svc-icon">&#127912;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z"/><path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/><path d="M14.5 17.5 4.5 15"/></svg></div>
         <div class="svc-name">Interior &amp; Exterior Painting</div>
         <div class="svc-desc">Premium painting with minimal disruption. Industrial-grade finishes and detailed color consultation included.</div>
         <div class="svc-tags"><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d3" data-cat="construction">
-        <div class="svc-icon">&#128295;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></div>
         <div class="svc-name">Drywall &amp; Plaster</div>
         <div class="svc-desc">Expert drywall and plaster — minor repairs to complete installations. Seamless results, texture matching, stucco.</div>
         <div class="svc-tags"><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal" data-cat="exterior">
-        <div class="svc-icon">&#127807;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
         <div class="svc-name">Landscaping &amp; Hardscaping</div>
         <div class="svc-desc">Full-service landscaping for commercial and residential. Beautiful outdoor spaces that enhance curb appeal.</div>
         <div class="svc-tags"><span class="svc-tag">Exterior</span><span class="svc-tag">Commercial</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d1" data-cat="construction">
-        <div class="svc-icon">&#127959;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7"/><path d="M7 14v7"/><path d="M17 3v3"/><path d="M7 3v3"/><path d="M10 14 2.3 6.3"/><path d="M14 6l7.7 7.7"/><path d="M8 6l8 8"/></svg></div>
         <div class="svc-name">Construction &amp; Renovation</div>
         <div class="svc-desc">New builds, renovations, flooring, concrete work, and complete building maintenance — commercial and residential.</div>
         <div class="svc-tags"><span class="svc-tag">Commercial</span><span class="svc-tag">Residential</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d2" data-cat="construction">
-        <div class="svc-icon">&#128203;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
         <div class="svc-name">Project &amp; Construction Management</div>
         <div class="svc-desc">End-to-end management — on time, on budget. Vendor coordination, scheduling, and quality assurance.</div>
         <div class="svc-tags"><span class="svc-tag">Commercial</span><span class="svc-tag">Government</span></div>
         <a href="#contact" class="svc-link">Get Estimate &#8594;</a>
       </div>
       <div class="svc-card reveal d3" data-cat="roofing">
-        <div class="svc-icon">&#9889;</div>
+        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg></div>
         <div class="svc-name">Disaster &amp; Storm Restoration</div>
         <div class="svc-desc">Emergency restoration for storm damage, water damage, and mold remediation. Fast response to restore your property.</div>
         <div class="svc-tags"><span class="svc-tag">Emergency</span><span class="svc-tag">24/7</span></div>
@@ -958,10 +1036,10 @@ footer{
       <p class="section-desc">Built on quality workmanship, reliability, and service that goes far beyond the job site.</p>
     </div>
     <div class="why-grid">
-      <div class="why-item reveal"><div class="why-icon">&#128274;</div><div><div class="why-title">Licensed, Insured &amp; Certified</div><div class="why-desc">Fully licensed, insured, and HUB/MBE/WBE certified. We meet all local and state requirements so you work with complete confidence.</div></div></div>
-      <div class="why-item reveal d1"><div class="why-icon">&#128200;</div><div><div class="why-title">On-Time, On-Budget Delivery</div><div class="why-desc">Our experienced project leaders track every milestone — completed on schedule with minimal disruption to your operations.</div></div></div>
-      <div class="why-item reveal d2"><div class="why-icon">&#11088;</div><div><div class="why-title">Workmanship Guaranteed</div><div class="why-desc">Comprehensive warranties on every job. We conduct a final walkthrough to ensure everything meets what we promised.</div></div></div>
-      <div class="why-item reveal d3"><div class="why-icon">&#128101;</div><div><div class="why-title">Experienced, Diverse Team</div><div class="why-desc">Decades of combined experience across commercial, governmental, and residential sectors — with MWBE accountability.</div></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><div class="why-title">Licensed, Insured &amp; Certified</div><div class="why-desc">Fully licensed, insured, and HUB/MBE/WBE certified. We meet all local and state requirements so you work with complete confidence.</div></div></div>
+      <div class="why-item reveal d1"><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="why-title">On-Time, On-Budget Delivery</div><div class="why-desc">Our experienced project leaders track every milestone — completed on schedule with minimal disruption to your operations.</div></div></div>
+      <div class="why-item reveal d2"><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><div class="why-title">Workmanship Guaranteed</div><div class="why-desc">Comprehensive warranties on every job. We conduct a final walkthrough to ensure everything meets what we promised.</div></div></div>
+      <div class="why-item reveal d3"><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div class="why-title">Experienced, Diverse Team</div><div class="why-desc">Decades of combined experience across commercial, governmental, and residential sectors — with MWBE accountability.</div></div></div>
     </div>
   </div>
 </section>
@@ -1155,13 +1233,13 @@ footer{
       <p class="section-desc">Licensed and operating across 7 states, with deep roots in the Carolinas and Mid-Atlantic region.</p>
     </div>
     <div class="states-wrap reveal">
-      <div class="state-chip"><span class="state-pin">&#128205;</span>North Carolina</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>South Carolina</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>Virginia</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>Maryland</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>Washington, DC</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>Michigan</div>
-      <div class="state-chip"><span class="state-pin">&#128205;</span>Ohio</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>North Carolina</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>South Carolina</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>Virginia</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>Maryland</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>Washington, DC</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>Michigan</div>
+      <div class="state-chip"><span class="state-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg></span>Ohio</div>
     </div>
   </div>
 </section>
@@ -1232,7 +1310,7 @@ footer{
         </div>
         <div class="ci-block">
           <span class="ci-label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#86d6e3f4e0e3e5f2d0efe3f1d6d4cac6e1ebe7efeaa8e5e9eb" class="ci-value" style="font-size:15px"><span class="__cf_email__" data-cfemail="3262574054575146645b574562607e72555f535b5e1c515d5f">[email&#160;protected]</span></a>
+          <a href="mailto:info@perfectviewprl.com" class="ci-value" style="font-size:15px">info@perfectviewprl.com</a>
         </div>
         <div class="ci-block">
           <span class="ci-label">Service Area</span>
@@ -1262,11 +1340,11 @@ footer{
           <!-- Step 1 -->
           <div class="form-panel active" id="panel1">
             <p style="font-size:12px;color:var(--gray);margin-bottom:18px">Step 1 of 3 — Your contact information</p>
-            <div class="fg"><label>First Name *</label><input id="firstName" type="text" autocomplete="given-name" inputmode="text" placeholder="John" required/></div>
-            <div class="fg"><label>Last Name *</label><input id="lastName" type="text" autocomplete="family-name" inputmode="text" placeholder="Smith" required/></div>
-            <div class="fg"><label>Email *</label><input id="email" type="email" autocomplete="email" inputmode="email" placeholder="john@example.com" required/></div>
-            <div class="fg"><label>Phone *</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567" required/></div>
-            <div class="fg"><label>Property Type</label>
+            <div class="fg" id="fgFirstName"><label for="firstName">First Name *</label><input id="firstName" type="text" autocomplete="given-name" inputmode="text" placeholder="John" required/><span class="field-error">First name is required</span></div>
+            <div class="fg" id="fgLastName"><label for="lastName">Last Name *</label><input id="lastName" type="text" autocomplete="family-name" inputmode="text" placeholder="Smith" required/><span class="field-error">Last name is required</span></div>
+            <div class="fg" id="fgEmail"><label for="email">Email *</label><input id="email" type="email" autocomplete="email" inputmode="email" placeholder="john@example.com" required/><span class="field-error">Please enter a valid email</span></div>
+            <div class="fg" id="fgPhone"><label for="phone">Phone *</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567" required/><span class="field-error">Phone number is required</span></div>
+            <div class="fg"><label for="propType">Property Type</label>
               <select id="propType">
                 <option value="">Select...</option>
                 <option>Residential</option>
@@ -1279,7 +1357,7 @@ footer{
           <!-- Step 2 -->
           <div class="form-panel" id="panel2">
             <p style="font-size:12px;color:var(--gray);margin-bottom:18px">Step 2 of 3 — Your project details</p>
-            <div class="fg"><label>Service Needed *</label>
+            <div class="fg" id="fgService"><label for="service">Service Needed *</label>
               <select id="service" required>
                 <option value="">Select a service...</option>
                 <option>Commercial TPO Roofing</option>
@@ -1292,8 +1370,9 @@ footer{
                 <option>Disaster &amp; Storm Restoration</option>
                 <option>Multiple Services</option>
               </select>
+              <span class="field-error">Please select a service</span>
             </div>
-            <div class="fg"><label>State</label>
+            <div class="fg"><label for="state">State</label>
               <select id="state">
                 <option value="">Select a state...</option>
                 <option>North Carolina</option>
@@ -1305,15 +1384,16 @@ footer{
                 <option>Ohio</option>
               </select>
             </div>
-            <div class="fg"><label>Project Details *</label>
+            <div class="fg" id="fgDetails"><label for="details">Project Details *</label>
               <textarea id="details" placeholder="Size, scope, timeline, and any relevant details..." required></textarea>
+              <span class="field-error">Please describe your project</span>
             </div>
           </div>
           <!-- Step 3 -->
           <div class="form-panel" id="panel3">
             <p style="font-size:12px;color:var(--gray);margin-bottom:14px">Step 3 of 3 — Review &amp; submit</p>
             <div class="review-box" id="reviewBox"></div>
-            <div class="fg"><label>How did you hear about us?</label>
+            <div class="fg"><label for="source">How did you hear about us?</label>
               <select id="source">
                 <option value="">Select...</option>
                 <option>Google Search</option>
@@ -1327,7 +1407,7 @@ footer{
           </div>
           <!-- Success -->
           <div class="form-success" id="formSuccess">
-            <div class="s-icon">&#127881;</div>
+            <div class="s-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
             <div class="s-title">Request Sent!</div>
             <p class="s-desc">We'll be in touch within 24 hours. If it's urgent, call us at <strong>(747) 253-2920</strong>.</p>
           </div>
@@ -1339,7 +1419,7 @@ footer{
         </div>
         <!-- GHL Calendar embed -->
         <div class="cal-toggle">
-          <button class="cal-btn" onclick="toggleCal()">&#128197;&nbsp;Prefer to book a time directly?</button>
+          <button class="cal-btn" onclick="toggleCal()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>&nbsp;Prefer to book a time directly?</button>
         </div>
         <!-- GHL Calendar: replace YOUR_CALENDAR_ID below
              Found in: GHL > Calendars > Your Calendar > Embed Code -->
@@ -1359,7 +1439,12 @@ footer{
       <div class="footer-brand">
         <span class="f-logo">Perfect View <em>PRL</em></span>
         <p class="f-desc">Full-service contracting providing commercial construction across the East Coast and Midwest. Minority &amp; Women Business Enterprise certified.</p>
-        <div class="f-hours">&#9200; Mon – Fri: 7:00 AM – 6:00 PM</div>
+        <div class="f-hours"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon – Fri: 7:00 AM – 6:00 PM</div>
+        <div class="f-social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
       </div>
       <div class="footer-cols">
         <div>
@@ -1386,9 +1471,9 @@ footer{
       </div>
       <div class="footer-contact">
         <span class="f-col-title">Contact Us</span>
-        <div class="fci"><span class="fci-icon">&#9990;</span><span>(747) 253-2920<br/><span style="font-size:11px;color:rgba(255,255,255,.35)">Call or Text</span></span></div>
-        <div class="fci"><span class="fci-icon">&#9993;</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4b4819682818790b28d8193b4b6a8a48389858d88ca878b89">[email&#160;protected]</a></span></div>
-        <div class="fci"><span class="fci-icon">&#128205;</span><span>NC, SC, VA, MD, DC, MI &amp; OH</span></div>
+        <div class="fci"><span class="fci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><span>(747) 253-2920<br/><span style="font-size:11px;color:rgba(255,255,255,.35)">Call or Text</span></span></div>
+        <div class="fci"><span class="fci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span><a href="mailto:info@perfectviewprl.com">info@perfectviewprl.com</a></span></div>
+        <div class="fci"><span class="fci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>NC, SC, VA, MD, DC, MI &amp; OH</span></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1417,7 +1502,7 @@ footer{
   <span id="toastMsg">Done!</span>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── NAV + SCROLL ────────────────────── */
 const nav = document.getElementById('nav');
 const btt = document.getElementById('back-top');
@@ -1485,6 +1570,37 @@ document.getElementById('filterTabs').addEventListener('click', e => {
 
 /* ── MULTI-STEP FORM ─────────────────── */
 let step = 1;
+
+/* Inline validation helpers */
+function markError(fgId) {
+  const fg = document.getElementById(fgId);
+  if(!fg) return;
+  fg.classList.add('has-error','shake');
+  fg.addEventListener('animationend', () => fg.classList.remove('shake'), {once:true});
+}
+function clearError(fgId) {
+  const fg = document.getElementById(fgId);
+  if(fg) fg.classList.remove('has-error','shake');
+}
+function clearAllErrors() {
+  document.querySelectorAll('.fg.has-error').forEach(fg => fg.classList.remove('has-error','shake'));
+}
+
+/* Clear error on input */
+['firstName','lastName','email','phone','service','details'].forEach(id => {
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('input', () => clearError('fg'+id.charAt(0).toUpperCase()+id.slice(1)));
+});
+
+/* Phone auto-format (xxx) xxx-xxxx */
+document.getElementById('phone').addEventListener('input', function(e) {
+  let v = this.value.replace(/\D/g,'');
+  if(v.length > 10) v = v.slice(0,10);
+  if(v.length >= 7) this.value = '('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
+  else if(v.length >= 4) this.value = '('+v.slice(0,3)+') '+v.slice(3);
+  else if(v.length > 0) this.value = '('+v;
+});
+
 function setStep(n) {
   step = n;
   document.querySelectorAll('.form-panel').forEach((p,i) => p.classList.toggle('active', i+1===n));
@@ -1495,21 +1611,29 @@ function setStep(n) {
   }
   document.getElementById('btnBack').style.visibility = n > 1 ? 'visible' : 'hidden';
   const nb = document.getElementById('btnNext');
-  nb.textContent = n === 3 ? 'Submit ✓' : 'Continue →';
+  nb.textContent = n === 3 ? 'Submit \u2713' : 'Continue \u2192';
 }
 function stepNext() {
+  clearAllErrors();
   if(step===1) {
+    let ok = true;
     const fn=document.getElementById('firstName').value.trim();
+    const ln=document.getElementById('lastName').value.trim();
     const em=document.getElementById('email').value.trim();
     const ph=document.getElementById('phone').value.trim();
-    if(!fn||!em||!ph){toast('Please fill in all required fields.',true);return;}
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
-    if(!emailOk){toast('Please enter a valid email address.',true);return;}
+    if(!fn){ markError('fgFirstName'); ok=false; }
+    if(!ln){ markError('fgLastName'); ok=false; }
+    if(!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ markError('fgEmail'); ok=false; }
+    if(!ph || ph.replace(/\D/g,'').length < 7){ markError('fgPhone'); ok=false; }
+    if(!ok){ toast('Please fix the highlighted fields.',true); return; }
   }
   if(step===2) {
+    let ok = true;
     const svc=document.getElementById('service').value;
     const det=document.getElementById('details').value.trim();
-    if(!svc||!det){toast('Please select a service and describe your project.',true);return;}
+    if(!svc){ markError('fgService'); ok=false; }
+    if(!det){ markError('fgDetails'); ok=false; }
+    if(!ok){ toast('Please fix the highlighted fields.',true); return; }
     buildReview();
   }
   if(step===3){submitForm();return;}
@@ -1679,4 +1803,14 @@ ts.textContent = '.proj-card.touched .proj-overlay{opacity:1}.proj-card.touched 
 document.head.appendChild(ts);
 
 /* ── FOOTER LAYOUT FIX ───────────────── */
-/* On mobile, footer-inner-grid is not a gr
+/* On mobile, footer-inner-grid is not a grid — uses flex column fallback */
+const fg = document.getElementById('footerGrid');
+if (fg && window.innerWidth < 960) {
+  fg.style.display = 'flex';
+  fg.style.flexDirection = 'column';
+  fg.style.gap = '32px';
+}
+
+</script>
+</body>
+</html>
