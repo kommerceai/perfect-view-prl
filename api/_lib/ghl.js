@@ -94,7 +94,7 @@ async function getWorkflows() {
 
 async function addContactToWorkflow(contactId, workflowId) {
   const res = await ghl.post(`/contacts/${contactId}/workflow/${workflowId}`, {
-    eventStartTime: new Date().toISOString(),
+    eventStartTime: new Date().toISOString().replace('Z', '+00:00'),
   });
   return res.data;
 }

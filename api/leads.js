@@ -57,7 +57,11 @@ module.exports = async function handler(req, res) {
     }
 
     /* ── 4. Enroll in nurture workflow ─── */
-    await ghl.findAndEnrollWorkflow(contactId, 'Fast 5-Min Lead Follow-Up (Form Submission)');
+    try {
+      await ghl.findAndEnrollWorkflow(contactId, 'Fast 5-Min Lead Follow-Up (Form Submission)');
+    } catch (wfErr) {
+      console.warn('[LEAD] Workflow enrollment failed (non-blocking):', wfErr.response?.data?.message || wfErr.message);
+    }
 
     res.status(200).json({ success: true, contactId, message: 'Lead processed successfully' });
   } catch (err) {

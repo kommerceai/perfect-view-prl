@@ -25,7 +25,11 @@ module.exports = async function handler(req, res) {
     await ghl.addContactTags(contactId, tags);
 
     /* ── Enroll in review workflow ─────── */
-    await ghl.findAndEnrollWorkflow(contactId, 'Post-Job Review Request (Customer Feedback)');
+    try {
+      await ghl.findAndEnrollWorkflow(contactId, 'Post-Job Review Request (Customer Feedback)');
+    } catch (wfErr) {
+      console.warn('[REVIEW] Workflow enrollment failed (non-blocking):', wfErr.response?.data?.message || wfErr.message);
+    }
 
     res.status(200).json({
       success: true,
