@@ -1,9 +1,11 @@
 const axios = require('axios');
 
+/* ── GHL API v2 Client ────────────────── */
 const ghl = axios.create({
-  baseURL: 'https://rest.gohighlevel.com/v1',
+  baseURL: 'https://services.leadconnectorhq.com',
   headers: {
     Authorization: `Bearer ${process.env.GHL_API_KEY}`,
+    Version: '2021-07-28',
     'Content-Type': 'application/json',
   },
   timeout: 15000,
@@ -14,39 +16,43 @@ const locationId = () => process.env.GHL_LOCATION_ID;
 /* ── CONTACTS ──────────────────────────── */
 
 async function createOrUpdateContact(data) {
-  const res = await ghl.post('/contacts/', {
+  const body = {
     locationId: locationId(),
     firstName: data.firstName,
     lastName: data.lastName,
     email: data.email,
     phone: data.phone,
     source: data.source || 'website',
-    customField: {
-      service_needed: data.service,
-      property_type: data.propertyType,
-      project_state: data.state,
-      project_details: data.projectDetails,
-    },
-  });
+  };
+
+  // Map custom fields by key (setup endpoint creates these)
+  const customFields = [];
+  if (data.service) customFields.push({ id: 'contact.service_needed', field_value: data.service });
+  if (data.propertyType) customFields.push({ id: 'contact.property_type', field_value: data.propertyType });
+  if (data.state) customFields.push({ id: 'contact.project_state', field_value: data.state });
+  if (data.projectDetails) customFields.push({ id: 'contact.project_details', field_value: data.projectDetails });
+  if (customFields.length) body.customFields = customFields;
+
+  const res = await ghl.post('/contacts/upsert', body);
   return res.data;
 }
 
 async function addContactTags(contactId, tags) {
-  const res = await ghl.post(`/contacts/${contactId}/tags/`, { tags });
+  const res = await ghl.post(`/contacts/${contactId}/tags`, { tags });
   return res.data;
 }
 
 /* ── PIPELINES ─────────────────────────── */
 
 async function getPipelines() {
-  const res = await ghl.get('/pipelines/', {
+  const res = await ghl.get('/opportunities/pipelines', {
     params: { locationId: locationId() },
   });
   return res.data.pipelines || [];
 }
 
 async function createPipeline(name, stages) {
-  const res = await ghl.post('/pipelines/', {
+  const res = await ghl.post('/opportunities/pipelines', {
     locationId: locationId(),
     name,
     stages: stages.map((s, i) => ({ name: s, position: i })),
@@ -106,18 +112,15 @@ async function findAndEnrollWorkflow(contactId, workflowName) {
 /* ── CUSTOM FIELDS ─────────────────────── */
 
 async function getCustomFields() {
-  const res = await ghl.get('/custom-fields/', {
-    params: { locationId: locationId() },
-  });
+  const res = await ghl.get(`/locations/${locationId()}/customFields`);
   return res.data.customFields || [];
 }
 
 async function createCustomField(name, type = 'TEXT') {
-  const res = await ghl.post('/custom-fields/', {
-    locationId: locationId(),
+  const res = await ghl.post(`/locations/${locationId()}/customFields`, {
     name,
     dataType: type,
-    position: 0,
+    model: 'contact',
   });
   return res.data;
 }
@@ -125,17 +128,12 @@ async function createCustomField(name, type = 'TEXT') {
 /* ── TAGS ──────────────────────────────── */
 
 async function getTags() {
-  const res = await ghl.get('/tags/', {
-    params: { locationId: locationId() },
-  });
+  const res = await ghl.get(`/locations/${locationId()}/tags`);
   return res.data.tags || [];
 }
 
 async function createTag(name) {
-  const res = await ghl.post('/tags/', {
-    locationId: locationId(),
-    name,
-  });
+  const res = await ghl.post(`/locations/${locationId()}/tags`, { name });
   return res.data;
 }
 
