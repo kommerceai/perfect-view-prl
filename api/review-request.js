@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
     await ghl.addContactTags(contactId, tags);
 
     /* ── Enroll in review workflow ─────── */
-    await ghl.findAndEnrollWorkflow(contactId, 'Review Request Sequence');
+    await ghl.findAndEnrollWorkflow(contactId, 'Post-Job Review Request (Customer Feedback)');
 
     res.status(200).json({
       success: true,

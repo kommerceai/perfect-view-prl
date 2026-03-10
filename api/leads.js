@@ -57,7 +57,7 @@ module.exports = async function handler(req, res) {
     }
 
     /* ── 4. Enroll in nurture workflow ─── */
-    await ghl.findAndEnrollWorkflow(contactId, 'Lead Nurture 14-Day');
+    await ghl.findAndEnrollWorkflow(contactId, 'Fast 5-Min Lead Follow-Up (Form Submission)');
 
     res.status(200).json({ success: true, contactId, message: 'Lead processed successfully' });
   } catch (err) {
