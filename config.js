@@ -7,8 +7,8 @@
  */
 (function () {
   // TODO: swap to local NC number (704 or 980) once CallRail provisions
-  var PHONE_DISPLAY = '(747) 253-2920';
-  var PHONE_TEL = '7472532920';
+  var PHONE_DISPLAY = '(747) 966-3950';
+  var PHONE_TEL = '7479663950';
   var EMAIL = 'info@perfectviewprl.com';
 
   var PV_CONFIG = {
