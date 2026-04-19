@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder OG image at brand colors. Replace with real
+     logo-on-photo composite when available. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0d1f3c"/>
+  <rect x="60" y="60" width="1080" height="510" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <g font-family="'Bebas Neue', 'Arial Narrow', sans-serif" fill="#ffffff">
+    <text x="100" y="260" font-size="128" letter-spacing="2">PERFECT VIEW</text>
+    <text x="100" y="370" font-size="128" letter-spacing="2" fill="#e85d04">PRL</text>
+  </g>
+  <g font-family="'DM Sans', Arial, sans-serif" fill="rgba(255,255,255,.7)">
+    <text x="100" y="430" font-size="28">Commercial Roofing &#183; Painting &#183; Landscaping</text>
+    <text x="100" y="470" font-size="22" fill="rgba(255,255,255,.5)">NC &#183; SC &#183; VA &#183; MD &#183; DC &#183; MI &#183; OH</text>
+  </g>
+  <g transform="translate(100 530)" font-family="'DM Sans', Arial, sans-serif" fill="rgba(255,255,255,.85)" font-size="18" font-weight="700">
+    <rect x="0" y="0" width="220" height="42" rx="21" fill="rgba(232,93,4,.15)" stroke="rgba(232,93,4,.4)"/>
+    <text x="110" y="28" text-anchor="middle" fill="#f0a060">LICENSED &#183; INSURED &#183; MBE/WBE</text>
+  </g>
+</svg>
